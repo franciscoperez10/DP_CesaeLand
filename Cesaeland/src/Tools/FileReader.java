@@ -1,5 +1,10 @@
 package Tools;
 
+import Models.Atracao;
+import Models.Custo;
+import Models.User;
+import Models.Venda;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -112,6 +117,5 @@ public class FileReader {
         }
         return atracaoArray;
     }
-
 
 }
