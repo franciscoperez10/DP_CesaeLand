@@ -8,6 +8,7 @@ public class Atracao {
     private double precoCrianca;
     private int duracaoSegundos;
 
+
     public Atracao(int id, String atracao, double precoAdulto, double precoCrianca, int duracaoSegundos) {
         this.id = id;
         this.atracao = atracao;
