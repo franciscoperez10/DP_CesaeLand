@@ -1,6 +1,6 @@
 package Models;
 
-public class Atracoes {
+public class Atracao {
 
     private int id;
     private String atracao;
@@ -8,7 +8,7 @@ public class Atracoes {
     private double precoCrianca;
     private int duracaoSegundos;
 
-    public Atracoes(int id, String atracao, double precoAdulto, double precoCrianca, int duracaoSegundos) {
+    public Atracao(int id, String atracao, double precoAdulto, double precoCrianca, int duracaoSegundos) {
         this.id = id;
         this.atracao = atracao;
         this.precoAdulto = precoAdulto;
