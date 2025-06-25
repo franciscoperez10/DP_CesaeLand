@@ -23,7 +23,7 @@ public class ClientController {
 
     public void menuCliente() {
         Scanner sc = new Scanner(System.in);
-        int opcao;
+        int opcao = -1;
         do {
 
             System.out.println("***** MENU CLIENTE *****");
@@ -46,12 +46,11 @@ public class ClientController {
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
-        }
+        } while (opcao !=0);
     }
 
     private void consultarAtracoesFavoritas() {
-        System.out.println("Atração mais procurada pelos adultos: ");
-        System.out.println("Atração mais procurada pelas crianças: ");
+
 
     }
 
