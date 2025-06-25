@@ -1,12 +1,18 @@
 package Repositories;
 
+import Models.Custo;
+import Tools.FileReader;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 public class CostRepository {
     private ArrayList<Custo> custoArray;
 
-    public RideRepository() throws FileNotFoundException {
+    public CostRepository() throws FileNotFoundException {
         FileReader csvFR = new FileReader();
 
-        this.custoArray = csvFR.CustoFileReader("Files/Cesaeland_custos.csv");
+        this.custoArray = csvFR.custoFileReader("Files/Cesaeland_custos.csv");
     }
 
     public ArrayList<Custo> getCostsArray() {

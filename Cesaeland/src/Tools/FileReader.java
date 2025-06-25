@@ -118,5 +118,4 @@ public class FileReader {
         return atracaoArray;
     }
 
-
 }
