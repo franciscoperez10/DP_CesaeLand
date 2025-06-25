@@ -27,8 +27,8 @@ public class FileReader {
 
             String[] linhaSeparada = linha.split(";");
 
-            String atracaoID = linhaSeparada[0];
-            String data = linhaSeparada[1];
+            int atracaoID = Integer.parseInt(linhaSeparada[0]);
+            int data = Integer.parseInt(linhaSeparada[1]);
             String tipoCliente = linhaSeparada[2];
 
             Venda newVenda = new Venda(atracaoID, data, tipoCliente);
@@ -53,7 +53,7 @@ public class FileReader {
 
             String[] linhaSeparada = linha.split(";");
 
-            String atracaoID = linhaSeparada[0];
+            int atracaoID = Integer.parseInt(linhaSeparada[0]);
             Double custoManutencaoBilhete = Double.parseDouble(linhaSeparada[1]);
             Double custoFixoMes = Double.parseDouble(linhaSeparada[2]);
 
@@ -105,7 +105,7 @@ public class FileReader {
 
             String[] linhaSeparada = linha.split(";");
 
-            String ID = linhaSeparada[0];
+            int ID = Integer.parseInt(linhaSeparada[0]);
             String atracao = linhaSeparada[1];
             Double precoAdulto = Double.parseDouble(linhaSeparada[2]);
             Double precoCrianca = Double.parseDouble(linhaSeparada[3]);
