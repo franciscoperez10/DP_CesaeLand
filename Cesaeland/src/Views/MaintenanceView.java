@@ -1,6 +1,8 @@
 package Views;
 
+import Models.Atracao;
 import Models.Venda;
+import Repositories.RideRepository;
 import Repositories.SaleRepository;
 
 import java.io.FileNotFoundException;
@@ -48,26 +50,28 @@ public class MaintenanceView {
     }
 
     private void Find3IdCloser50(Map<Integer, Integer> countTickets) {
-        
+
     }
 
 
-    private Map<Integer, Integer> countTickets(SaleRepository repo) {
-        Map<Integer, Integer> count = new HashMap<>();
+    private Map<Atracao, Integer> countTickets(SaleRepository saleRepo, RideRepository rideRepo) {
+        Map<Atracao, Integer> ticketsSoldMap = new HashMap<>();
 
-        Venda[] vendas = repo.getSalesArray().toArray(new Venda[0]);
+        for(Atracao atracaoAtual: rideRepo.getRidesArray()){
+            ticketsSoldMap.put(atracaoAtual,0);
+        }
 
-        for (Venda venda : vendas) {
-            int atracaoId = venda.getAtracaoID();
-
-            // Se o ID já estiver no mapa, incrementa o valor
-            if (count.containsKey(atracaoId)) {
-                count.put(atracaoId, count.get(atracaoId) + 1);
-            } else {
-                count.put(atracaoId, 1);
+        for(Venda vendaAtual: saleRepo.getSalesArray()){
+            for(Atracao atracaoAtual: rideRepo.getRidesArray()){
+                if(vendaAtual.getAtracaoID()== atracaoAtual.getId()){
+                    int numeroBilhetesVendidosAteAgora= ticketsSoldMap.get(atracaoAtual);
+                    ticketsSoldMap.put(atracaoAtual,numeroBilhetesVendidosAteAgora+1);
+                    break;
+                }
             }
         }
-        return count;
+
+        return ticketsSoldMap;
     }
 
 }
