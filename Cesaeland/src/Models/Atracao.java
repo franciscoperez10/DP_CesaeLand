@@ -3,12 +3,12 @@ package Models;
 public class Atracao {
 
     private int id;
-    private int atracao;
+    private String atracao;
     private double precoAdulto;
     private double precoCrianca;
     private int duracaoSegundos;
 
-    public Atracao(int id, int atracao, double precoAdulto, double precoCrianca, int duracaoSegundos) {
+    public Atracao(int id, String atracao, double precoAdulto, double precoCrianca, int duracaoSegundos) {
         this.id = id;
         this.atracao = atracao;
         this.precoAdulto = precoAdulto;
